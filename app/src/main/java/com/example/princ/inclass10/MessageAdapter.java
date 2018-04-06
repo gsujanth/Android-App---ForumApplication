@@ -84,7 +84,7 @@ class MessageAdapter extends ArrayAdapter<MessagesListResponse.Message> {
                 Log.d(TAG, "deleteThreadButtonOnClick: " + messageObjects.get(position).id);
                 dataUpdateAfterMessageDelete.deleteMessage(getToken(), messageObjects.get(position).id);
             }
-        });
+        });//
 
         return convertView;
     }
