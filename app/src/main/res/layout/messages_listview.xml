@@ -2,46 +2,49 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/messagelistview_shape">
+    android:background="@drawable/messagelistview_shape"
+    android:descendantFocusability="blocksDescendants">
+
 
     <TextView
-        android:id="@+id/messageTV"
+        android:id="@+id/newMessageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
-        android:layout_toLeftOf="@+id/deleteMessageButton"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="15dp"
         android:layout_toStartOf="@+id/deleteMessageButton"
-        android:layout_marginTop="11dp"
+        android:layout_toLeftOf="@+id/deleteMessageButton"
         android:text="" />
+
+    <ImageButton
+        android:id="@+id/deleteMessageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:contentDescription="@string/deleteMessage"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <TextView
         android:id="@+id/creatorNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/messageTV"
-        android:layout_alignStart="@+id/messageTV"
-        android:layout_below="@+id/messageTV"
-        android:text=""
-        android:textStyle="bold" />
-
-    <ImageButton
-        android:id="@+id/deleteMessageButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="@string/deleteMessage"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+        android:layout_alignStart="@+id/newMessageTV"
+        android:layout_alignLeft="@+id/newMessageTV"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:text="" />
 
     <TextView
         android:id="@+id/createdTimeTV"
@@ -49,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/deleteMessageButton"
         android:layout_alignRight="@+id/deleteMessageButton"
-        android:layout_below="@+id/messageTV"
+        android:layout_alignTop="@+id/creatorNameTV"
         android:textStyle="bold"
         android:text="" />
 </RelativeLayout>

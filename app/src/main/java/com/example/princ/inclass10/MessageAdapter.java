@@ -52,7 +52,7 @@ class MessageAdapter extends ArrayAdapter<MessagesListResponse.Message> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.messages_listview, parent, false);
             viewHolder = new MessageAdapter.ViewHolder();
-            viewHolder.messageTV = convertView.findViewById(R.id.messageTV);
+            viewHolder.newMessageTV = convertView.findViewById(R.id.newMessageTV);
             viewHolder.creatorNameTV = convertView.findViewById(R.id.creatorNameTV);
             viewHolder.createdTimeTV = convertView.findViewById(R.id.createdTimeTV);
             viewHolder.deleteMessageButton = convertView.findViewById(R.id.deleteMessageButton);
@@ -67,7 +67,7 @@ class MessageAdapter extends ArrayAdapter<MessagesListResponse.Message> {
             viewHolder.deleteMessageButton.setVisibility(View.VISIBLE);
         }
         viewHolder.creatorNameTV.setText(String.format("%s %s", message.user_fname, message.user_lname));
-        viewHolder.messageTV.setText(message.message);
+        viewHolder.newMessageTV.setText(message.message);
         try {
             convertedDate = dateFormat.parse(message.created_at);
             newConvertedDate=new Date(convertedDate.getTime()-4*HOUR);
@@ -100,7 +100,7 @@ class MessageAdapter extends ArrayAdapter<MessagesListResponse.Message> {
     }
 
     private static class ViewHolder {
-        TextView messageTV, creatorNameTV, createdTimeTV;
+        TextView newMessageTV, creatorNameTV, createdTimeTV;
         ImageButton deleteMessageButton;
     }
 
